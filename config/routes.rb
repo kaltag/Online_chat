@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  scope "(:locale)", locale: /ru|en/ do
+    devise_scope :user do
+      get 'registration', to: 'devise/registrations#new', as: :new_user_registration
+    end
+    devise_for :users
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+    root "rooms#index"
+  end
 end

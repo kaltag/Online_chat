@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Сделать веб-приложение - простой онлайн-чат на Rails 7 с использованием технологии Hotwire - Turbo.
 
-Things you may want to cover:
+Что нужно сделать:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- на главной странице должен быть список созданных чатов и возможность создать новый
+- любой пользователь может создать новый чат, при создании указать его название
+- любой пользователь может зайти в любой чат, увидеть историю переписки и отправить своё сообщение
+- после отправки сообщения у всех пользователей, у которых открыт чат, должно появиться новое сообщение в чате
+- при получении нового сообщения должно появиться уведомление со звуком, в котором будет название чата и текст сообщения (дизайн и расположение - по желанию)
