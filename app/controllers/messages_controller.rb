@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
 
     return unless @new_message&.save
 
-    @new_message.broadcast_append_to @new_message.room
+    @new_message.broadcast_append_to @new_message.room, locals: {user: current_user}
   end
 
   private
