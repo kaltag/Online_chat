@@ -1,15 +1,12 @@
 <%= turbo_stream_from @room %>
 
+<div class="flex flex-col h-96 overflow-x-auto mt-5" id="chat-container">
+  <%= turbo_frame_tag :messages do %>
+    <%= render partial: "messages/message", collection: @messages, locals: {user: current_user}%>
+  <% end %>
+</div>
 
-  <div class="flex flex-col h-96 overflow-x-auto mt-5">
-
-    <%= turbo_frame_tag :messages do %>
-      <%= render partial: "messages/message", collection: @messages, locals: {user: current_user}%>
-    <% end %>
-  </div>
-
-
-<%= form_with model: @new_message do |f| %>
+<%= form_with model: @new_message, data: {controller: "chat_refresh", action: "turbo:submit-end->chat_refresh#clearInput"} do |f| %>
   <%= f.text_field :body, class: 'w-full bg-gray-300 py-5 px-3 rounded-xl' %>
   <%= f.hidden_field :room_id, value: @room.id %>
 <% end %>
