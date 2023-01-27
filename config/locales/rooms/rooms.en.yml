@@ -2,3 +2,5 @@ en:
   rooms:
     index:
       new_room: "New room"
+      chat_list: "Chat list"
+      chat_name: "Enter a chat name"

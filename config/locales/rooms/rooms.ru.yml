@@ -2,3 +2,5 @@ ru:
   rooms:
     index:
       new_room: "Новая комната"
+      chat_list: "Список чатов"
+      chat_name: "Введите имя чата"
