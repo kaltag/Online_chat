@@ -8,9 +8,9 @@
         Received on <%= l(notification.created_at, format: :short) %>
       </p>
       <p>
-        Chat: <%= Room.find(notification.params[:message][:room_id]).title  %>
+        Chat: <%= Room.find(notification.params[:message][:room_id]).title %>
       </p>
-      <%= link_to 'Delete', notification, data: {turbo_method: :delete} %>
+      <%= link_to 'Delete', notification, data: { turbo_method: :delete } %>
     </div>
   </div>
 </li>

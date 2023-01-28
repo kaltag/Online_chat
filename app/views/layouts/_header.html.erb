@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
         <div class="flex-shrink-0">
-          <%= link_to image_tag("chat-logo.svg", class: 'object-fill md:h-8 h-6', alt: 'ChatLogo'), root_path %>
+          <%= link_to image_tag('chat-logo.svg', class: 'object-fill md:h-8 h-6', alt: 'ChatLogo'), root_path %>
         </div>
 
         <div>
@@ -67,11 +67,11 @@
             <%= current_user.email %>
           </div>
           <div class="py-1 ml-4 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-            <%= link_to t(:sign_out), destroy_user_session_path, data: {turbo_method: :delete}, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'%>
+            <%= link_to t(:sign_out), destroy_user_session_path, data: { turbo_method: :delete }, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100' %>
           </div>
         <% else %>
           <div class="ml-10 flex items-baseline space-x-4">
-            <%= link_to new_user_registration_path, class: "bg-yellow-300 text-gray-800 flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-yellow-200 focus:outline-none focus:bg-gray-700" do %>
+            <%= link_to new_user_registration_path, class: 'bg-yellow-300 text-gray-800 flex items-center px-3 py-2 rounded-md text-sm font-medium hover:bg-yellow-200 focus:outline-none focus:bg-gray-700' do %>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
@@ -101,4 +101,3 @@
     visibility: visible;
   }
 </style>
-

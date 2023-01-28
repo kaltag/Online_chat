@@ -15,6 +15,7 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise'
+gem 'noticed', '~> 1.6'
 gem 'tailwindcss-rails', '~> 2.0'
 
 group :development, :test do
@@ -30,5 +31,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem 'noticed', '~> 1.6'
