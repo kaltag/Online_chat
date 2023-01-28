@@ -1,4 +1,7 @@
+<%= turbo_stream_from :notifications %>
 <%= turbo_stream_from :rooms %>
+
+<%= turbo_frame_tag "notifications", src: notifications_path %>
 
 <%= turbo_frame_tag :rooms do %>
   <div class="flex flex-col" >

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     resources :rooms, only: %i[show create], param: :title
     resources :messages, only: :create
+    resources :notifications, only: %i[index destroy]
 
     root 'rooms#index'
   end
