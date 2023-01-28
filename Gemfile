@@ -31,4 +31,4 @@ group :test do
   gem 'webdrivers'
 end
 
-gem "noticed", "~> 1.6"
+gem 'noticed', '~> 1.6'
