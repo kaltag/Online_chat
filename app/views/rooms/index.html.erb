@@ -1,20 +1,20 @@
 <%= turbo_stream_from :notifications %>
 <%= turbo_stream_from :rooms %>
 
-<%= turbo_frame_tag "notifications", src: notifications_path %>
+<% if user_signed_in?%>
+  <%= turbo_frame_tag "notifications", src: notifications_path %>
 
-<%= turbo_frame_tag :rooms do %>
-  <div class="flex flex-col" >
-    <div class="text-4xl"> <%= t('.chat_list') %> </div>
-    <%= render @rooms %>
-  </div>
-<% end %>
-
-<%= form_with model: @new_room do |f|%>
-  <% if user_signed_in?%>
-    <div class="pt-5 border-gray-300 border-t">
-      <%= f.text_field :title, class: 'appearance-none rounded-md relative block w-96 mt-1 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 text-md md:text-sm', placeholder: "#{t('.chat_name')}" %>
-      <%= f.submit t('.new_room'), class: 'relative w-48 py-2 px-4 mt-4 border border-transparent text-md md:text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out cursor-pointer' %>
+  <%= turbo_frame_tag :rooms do %>
+    <div class="flex flex-col" >
+      <div class="text-4xl"> <%= t('.chat_list') %> </div>
+      <%= render @rooms %>
     </div>
+  <% end %>
+
+  <%= form_with model: @new_room do |f|%>
+      <div class="pt-5 border-gray-300 border-t">
+        <%= f.text_field :title, class: 'appearance-none rounded-md relative block w-96 mt-1 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 text-md md:text-sm', placeholder: "#{t('.chat_name')}" %>
+        <%= f.submit t('.new_room'), class: 'relative w-48 py-2 px-4 mt-4 border border-transparent text-md md:text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out cursor-pointer' %>
+      </div>
   <% end %>
 <% end %>
